@@ -26,7 +26,7 @@ On a Void based distribution as root, run `xbps-install -Su` to assure your syst
 
 ```
 xbps-install wget
-wget https://claridge.xyz/larbs.sh
+wget https://github.com/ovinsnes/LARBS/blob/master/larbs.sh
 sh larbs.sh
 ```
 
@@ -44,7 +44,7 @@ customization.
 ## Customization
 
 By default, LARBS uses the programs [here in progs.csv](progs.csv) and installs
-[the voidrice dotfiles here](https://github.com/PlatinumClaridge/voidrice),
+[the voidrice dotfiles here](https://github.com/ovinsnes/voidrice),
 but you can easily change this by either modifying the default variables at the
 beginning of the script or giving the script one of these options:
 
@@ -83,4 +83,4 @@ installations and tags as well.
 
 It's purposefully a very simple script, but if you have ideas on how to make it more elegant, feel free to submit a pull request or contact me:
 
-am@claridge.xyz
+olevinsnes@protonmail.com
