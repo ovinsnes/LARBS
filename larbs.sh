@@ -1,6 +1,6 @@
 #!/bin/sh
 # Luke's Auto Rice Boostrapping Script (LARBS)
-# by Adrian Claridge <am_claridge@icloud.com>
+# by Ole Vinsnes <olevinsnes@protonmail.com>
 # License: GNU GPLv3
 
 ### OPTIONS AND VARIABLES ###
@@ -13,8 +13,8 @@ while getopts ":a:r:b:p:h" o; do case "${o}" in
 	*) printf "Invalid option: -%s\\n" "$OPTARG" && exit ;;
 esac done
 
-[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/PlatinumClaridge/voidrice.git"
-[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/PlatinumClaridge/LARBS/master/progs.csv"
+[ -z "$dotfilesrepo" ] && dotfilesrepo="https://github.com/ovinsnes/voidrice.git"
+[ -z "$progsfile" ] && progsfile="https://raw.githubusercontent.com/ovinsnes/LARBS/master/progs.csv"
 [ -z "$repobranch" ] && repobranch="master"
 
 ### FUNCTIONS ###
@@ -25,7 +25,7 @@ grepseq="\"^[PGV]*,\""
 error() { clear; printf "ERROR:\\n%s\\n" "$1"; exit;}
 
 welcomemsg() { \
-	dialog --title "Welcome!" --msgbox "Welcome to Luke's Auto-Rice Bootstrapping Script!\\n\\nThis script will automatically install a fully-featured Linux desktop, which I use as my main machine.\\n\\n-Adrian" 10 60
+	dialog --title "Welcome!" --msgbox "Welcome to Luke's Auto-Rice Bootstrapping Script!\\n\\nThis script will automatically install a fully-featured Void Linux desktop, which I use as my main machine.\\n\\n-Ole" 10 60
 	}
 
 getuser() { \
@@ -86,7 +86,7 @@ putgitrepo() { # Downloads a gitrepo $1 and places the files in $2 only overwrit
 
 finalize(){ \
 	dialog --infobox "Preparing welcome message..." 4 50
-	dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the script completed successfully and all the programs and configuration files should be in place.\\n\\nTo run the new graphical environment, log out and log back in as your new user, then run the command \"startx\" to start the graphical environment (it will start automatically in tty1).\\n\\n.t Adrian" 12 80
+	dialog --title "All done!" --msgbox "Congrats! Provided there were no hidden errors, the script completed successfully and all the programs and configuration files should be in place.\\n\\nTo run the new graphical environment, log out and log back in as your new user, then run the command \"startx\" to start the graphical environment (it will start automatically in tty1).\\n\\n.t Ole" 12 80
 	}
 
 ### THE ACTUAL SCRIPT ###
@@ -139,7 +139,7 @@ rm /var/service/agetty-tty3
 touch /etc/sv/agetty-tty3/down
 
 # Create basic home directories
-sudo -u $name mkdir /home/$name/Documents /home/$name/Downloads /home/$name/Pictures/ /home/$name/Pictures/screenshots /home/$name/Videos /home/$name/Music
+sudo -u $name mkdir /home/$name/Documents /home/$name/Downloads /home/$name/Videos /home/$name/Music
 
 # Last message! Install complete!
 finalize
